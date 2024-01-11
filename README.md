@@ -1,5 +1,6 @@
 # Vite와 SASS/SCSS 로 만드는 Youtube-APP
 ![1](https://github.com/reserver7/react-sass-youtube-app/assets/78328320/d7c4a1ca-4787-4d0e-bfe1-4056bf9a1def)
+## visit site : [https://react-sass-youtube-app.netlify.app](https://react-sass-youtube-app-five.vercel.app/)
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Fire.png" alt="Fire" width="2%" /> vite + React
 ```bash
 $ npm init vite

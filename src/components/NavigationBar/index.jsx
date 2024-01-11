@@ -19,7 +19,12 @@ const NavigationBar = () => {
         <BiArrowBack size={25} />
       </button>
       <form>
-        <input type="text" name="search" placeholder="search" />
+        <input
+          type="text"
+          name="search"
+          placeholder="search"
+          autoComplete="false"
+        />
         <button type="submit">
           <ImSearch size={20} />
         </button>

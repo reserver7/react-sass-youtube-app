@@ -6,6 +6,13 @@ import { SideBarContext } from "../../../context/SideBarContext";
 
 const LeftNav = () => {
   const { handleToggleSideBar } = useContext(SideBarContext);
+  const search = document.getElementById("search");
+  const search2 = document.getElementById("search2");
+
+  const handelClick = () => {
+    search.innerValue("");
+    search2.innerValue("");
+  };
 
   return (
     <div className="menu-logo">
@@ -17,7 +24,7 @@ const LeftNav = () => {
       </button>
 
       <div className="logo-container">
-        <Link to="/">
+        <Link to="/" onClick={handelClick}>
           <img src={imgUrl} alt="youtube logo" />
         </Link>
       </div>

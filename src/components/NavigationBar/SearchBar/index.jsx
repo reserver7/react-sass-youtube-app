@@ -1,25 +1,30 @@
+/* eslint-disable react/prop-types */
 import React, { useContext } from "react";
-import { ImSearch } from "react-icons/im";
-import { MdKeyboardVoice } from "react-icons/md";
+import { ImSearch as SearchIcon } from "react-icons/im";
+import { MdKeyboardVoice as VoiceIcon } from "react-icons/md";
 import { SearchContext } from "../../../context/SearchContext";
 import useWindowSize from "../../../helpers/useWindowSize";
 
-const SearchBar = () => {
+const SearchBar = ({ onChange, onSubmit }) => {
   const { width } = useWindowSize();
-  const { setShowSpecialSearchBar } = useContext(SearchContext);
+
+  const { searchQuery, setShowSpecialSearchBar } = useContext(SearchContext);
 
   return (
-    <div className={`SearchBar ${width <= 640 ? "smallSearch" : ""}`}>
+    <div className={`SearchBar  ${width <= 640 ? "smallSearch" : ""}`}>
       {width > 640 ? (
-        <form>
+        <form onSubmit={onSubmit}>
           <input
+            value={searchQuery.input}
+            onChange={onChange}
             type="text"
             name="search"
             placeholder="Search"
             autoComplete="false"
+            id="search2"
           />
           <button type="submit">
-            <ImSearch size={20} />
+            <SearchIcon size={20} data-tip="Search" data-for="navbar" />
           </button>
         </form>
       ) : (
@@ -27,12 +32,16 @@ const SearchBar = () => {
           className="icon-container searchIcon"
           onClick={() => setShowSpecialSearchBar(true)}
         >
-          <ImSearch size={20} />
+          <SearchIcon size={20} data-tip="Search" data-for="navbar" />
         </button>
       )}
 
       <button className="icon-container voiceIcon">
-        <MdKeyboardVoice size={25} />
+        <VoiceIcon
+          size={25}
+          data-tip="Search with your voice"
+          data-for="navbar"
+        />
       </button>
     </div>
   );

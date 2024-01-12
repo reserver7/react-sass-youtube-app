@@ -4,10 +4,10 @@ import { createContext } from "react";
 export const SearchContext = createContext();
 
 export const SearchContextProvider = (props) => {
-  // const [searchQuery, setSearchQuery] = useState({
-  //   input: '',
-  //   videos: []
-  // })
+  const [searchQuery, setSearchQuery] = useState({
+    input: "",
+    videos: [],
+  });
 
   const [showSpecialSearchBar, setShowSpecialSearchBar] = useState(false);
 
@@ -16,8 +16,8 @@ export const SearchContextProvider = (props) => {
       value={{
         showSpecialSearchBar,
         setShowSpecialSearchBar,
-        // searchQuery,
-        // setSearchQuery
+        searchQuery,
+        setSearchQuery,
       }}
       {...props}
     />
